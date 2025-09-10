@@ -1,25 +1,47 @@
 body
 {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Calibri;
 }
 header
 {
-    background-color: rgba(242, 169, 60, 0.7);  
-    padding: 10px 200px;  
+    background-color: rgba(98, 155, 230, 0.7);  
+    padding: 10px;  
     display: flex;
     flex-direction: row;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    
+    
+    
 }
 .caja
 {
-    background-color: rgb(235, 207, 165);
+    background-color: rgba(195, 211, 233, 0.7);
     width: 30px;
+    
     height: 50px;
     margin: 2px;
+    border: 2px solid rgba(28, 41, 58, 0.7);
+    box-shadow:0 0 5px 3px rgba(41, 50, 63, 0.7);
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 10px;
     border-radius: 8px;
+
+}
+#logito{
+    width: auto;
+    height: 30px;
+}
+#personajes{
+    width: 30px;
+    height: 35px;
 }
  
