@@ -3,38 +3,46 @@ body
     margin: 0;
     font-family: Calibri;
 }
-header
+.contenedor
 {
-    background-color: rgba(98, 155, 230, 0.7);  
+    
     padding: 10px;  
-    display: flex;
-    flex-direction: row;
-    column-gap: 10px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    overflow-x: hidden;
+    display: grid;
+    border: solid black;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 70px);
+    row-gap: 20px;
+    column-gap: 20px;
+    justify-content: start;
+    align-content: center;
+    
     
     
     
 }
+
 .caja
 {
     background-color: rgba(195, 211, 233, 0.7);
-    width: 30px;
-    
+    width: 100px;
     height: 50px;
     margin: 2px;
     border: 2px solid rgba(28, 41, 58, 0.7);
     box-shadow:0 0 5px 3px rgba(41, 50, 63, 0.7);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     font-size: 10px;
     border-radius: 8px;
+    grid-column-start: 3;
+    
+    
 
+}
+#caja1{
+    grid-column-start:3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+}
+#caja2{
+    grid-column: 5 /span 7;
 }
 .caja:hover
 {
