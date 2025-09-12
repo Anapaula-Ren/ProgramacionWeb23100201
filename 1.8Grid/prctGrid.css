@@ -1,4 +1,4 @@
-body
+/*dy
 {
     margin: 0;
     font-family: Calibri;
@@ -9,12 +9,13 @@ body
     padding: 10px;  
     display: grid;
     border: solid black;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 70px);
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(1, 50px);
     row-gap: 20px;
     column-gap: 20px;
-    justify-content: start;
+    justify-content: center;
     align-content: center;
+    text-align: center;
     
     
     
@@ -31,7 +32,7 @@ body
     box-shadow:0 0 5px 3px rgba(41, 50, 63, 0.7);
     font-size: 10px;
     border-radius: 8px;
-    grid-column-start: 3;
+    grid-column-start: 1;
     
     
 
@@ -58,5 +59,49 @@ body
 #personajes{
     width: 30px;
     height: 35px;
+}*/
+
+/* Estilo general del contenedor */
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+  gap: 15px; /* espacio entre cajas */
+  padding: 20px;
+  border:solid black;
+ /*ackground-color: #f0f0f0;*/
 }
- 
+
+/* Estilo de cada caja */
+.caja {
+  background-color: #acb8e2;
+  border: 2px solid #3f465f;
+  padding: 20px;
+  text-align: center;
+  font-family: Calibri;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.caja:hover {
+  transform: scale(1.05);
+}
+
+#caja3{
+    grid-column:span 2;
+}
+#caja5{
+    grid-row-start: 3;
+}
+#caja6{
+    grid-column-start: 2;
+    
+}
+#caja7{
+    grid-column-start: 4;
+    grid-row-start: 5;
+}
+#caja8{
+    grid-row:span 4;
+}
