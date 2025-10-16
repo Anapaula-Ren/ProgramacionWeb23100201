@@ -11,4 +11,15 @@ document.getElementById('btn').addEventListener('click', function() {
     };
     solicitud.open("GET", "https://rickandmortyapi.com/api/character/259", true);
     solicitud.send();
+});  
+  
+document.getElementById('btnFetch').addEventListener('click', function() {
+    fetch("https://rickandmortyapi.com/api/character/259")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('imagen').src = data.image;
+        console.log()(data); 
+    })
+    //.then(response => console.log(response))
+    .catch(err => console.error (err));
 });
