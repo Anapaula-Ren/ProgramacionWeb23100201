@@ -23,3 +23,10 @@ document.getElementById('btnFetch').addEventListener('click', function() {
     //.then(response => console.log(response))
     .catch(err => console.error (err));
 });
+
+document.getElementById('btn_async').addEventListener('click', async function fetchData() {
+ respuesta = await fetch("https://rickandmortyapi.com/api/character/259");
+    datojson = await respuesta.json();
+    console.log(datojson)
+    document.getElementById('imagen').src=datojson.image;
+});
