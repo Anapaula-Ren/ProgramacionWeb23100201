@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+</head>
+<body>
+    <form class="pure-form" action="https://httpbin.org/post" method="POST" target ="resultadoPOST">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+ 
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido">
+ 
+        <!-- botón que usa el envío normal del formulario -->
+        <button class="pure-button pure-button-primary" type="submit">Enviar (normal)</button>
+
+        <!-- botón que enviará con JavaScript -->
+        <button class="pure-button" type="button" id="btnFetch">Enviar (JS)</button>
+    </form>
+ 
+    <iframe name="resultadoPOST" style="width:100%; height:300px; border:1px solid #ccc;"></iframe>
+
+   <!-- ...existing code... -->
+    <script>
+        document.getElementById('btnFetch').addEventListener('click', function() {
+            const formElement = document.querySelector('.pure-form');
+            const datosForm = new FormData(formElement);
+            const datosJSON = {};
+            datosForm.forEach((valor, clave) => {
+                datosJSON[clave] = valor;
+            });
+            const bodyData = JSON.stringify(datosJSON);
+            const contentType = 'application/json';
+ 
+            fetch('https://httpbin.org/post', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': contentType
+                },
+                body: bodyData
+            })
+            .then(response => response.json())
+            .then(dato => {
+                console.log(dato);
+                document.querySelector('iframe[name="resultadoPOST"]').srcdoc = 
+                    JSON.stringify(dato, null, 2);
+            })
+           
+        });
+    </script>
+    
+</html>
